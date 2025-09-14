@@ -52,19 +52,19 @@
 </head>
 <body class="text-gray-800">
 
-  <!-- Aviso (disclaimer) -->
-  <div class="w-full bg-yellow-50 text-yellow-900 text-sm md:text-base px-4 py-3 relative z-40">
-    <div class="max-w-6xl mx-auto flex items-start gap-2">
-      <i data-lucide="alert-triangle" class="w-5 h-5 mt-0.5"></i>
-      <p>
-        Este site é demonstrativo de <strong>instalação assistida</strong> e <strong>não representa nem é afiliado ao INSS</strong>.
-        Use seu <strong>nome/marca próprios</strong> e comunicações oficiais.
-      </p>
-    </div>
-  </div>
-
-  <!-- Navbar fixa -->
+  <!-- Navbar fixa com aviso -->
   <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-md z-50">
+    <!-- Aviso dentro da navbar -->
+    <div class="w-full bg-yellow-50 text-yellow-900 text-xs md:text-sm px-4 py-2 border-b border-yellow-200">
+      <div class="max-w-6xl mx-auto flex items-start gap-2">
+        <i data-lucide="alert-triangle" class="w-4 h-4 mt-0.5"></i>
+        <p>
+          Este site é demonstrativo de <strong>instalação assistida</strong> e <strong>não representa nem é afiliado ao INSS</strong>.
+          Use seu <strong>nome/marca próprios</strong> e comunicações oficiais.
+        </p>
+      </div>
+    </div>
+
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex items-center justify-between h-16">
         <a href="#inicio" class="flex items-center gap-2">
@@ -97,7 +97,7 @@
   </nav>
 
   <!-- Hero -->
-  <header id="inicio" class="hero-bg relative pt-40 pb-16 md:pb-24 px-6 mt-[104px]">
+  <header id="inicio" class="hero-bg relative pt-52 pb-16 md:pb-24 px-6">
     <div class="absolute inset-0 bg-gradient-to-b from-blue-900/70 to-black/40 z-0 rounded-b-2xl"></div>
     <div class="relative z-10 max-w-4xl mx-auto text-center text-white" data-aos="fade-up">
       <h1 class="text-4xl md:text-6xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-green-300">
