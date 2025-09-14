@@ -18,16 +18,16 @@
   <!-- Ícones Lucide -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-    <style>
+  <style>
     :root { scroll-behavior: smooth; }
     body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg,#eef2f8 0%,#f7fafc 100%); }
 
     .hero-bg {
       position: relative;
-      background: url('https://i.imgur.com/MTMxQes.png') center/contain no-repeat, 
-                  linear-gradient(135deg,#eef2f8 0%,#f7fafc 100%); /* gradiente no fundo */
+      background: url('https://i.imgur.com/MTMxQes.png') center/contain no-repeat,
+                  linear-gradient(135deg,#eef2f8 0%,#f7fafc 100%);
       min-height: 90vh;
-      border-bottom-left-radius: 1.5rem; 
+      border-bottom-left-radius: 1.5rem;
       border-bottom-right-radius: 1.5rem;
     }
 
@@ -35,7 +35,7 @@
       content: "";
       position: absolute; inset: 0;
       background: linear-gradient(to bottom, rgba(0,58,140,0.65), rgba(0,0,0,0.35));
-      border-bottom-left-radius: 1.5rem; 
+      border-bottom-left-radius: 1.5rem;
       border-bottom-right-radius: 1.5rem;
     }
 
@@ -49,12 +49,11 @@
     .arrow-animate { animation: bounce 1s infinite; }
     @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(4px)} }
   </style>
-
 </head>
 <body class="text-gray-800">
 
   <!-- Aviso (disclaimer) -->
-  <div class="w-full bg-yellow-50 text-yellow-900 text-sm md:text-base px-4 py-3">
+  <div class="w-full bg-yellow-50 text-yellow-900 text-sm md:text-base px-4 py-3 relative z-40">
     <div class="max-w-6xl mx-auto flex items-start gap-2">
       <i data-lucide="alert-triangle" class="w-5 h-5 mt-0.5"></i>
       <p>
@@ -68,13 +67,10 @@
   <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-md z-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex items-center justify-between h-16">
-        <!-- Logo / Nome -->
         <a href="#inicio" class="flex items-center gap-2">
           <i data-lucide="badge-check" class="w-6 h-6 text-blue-700"></i>
           <span class="font-extrabold text-blue-800">Portal de Benefícios</span>
         </a>
-
-        <!-- Links desktop -->
         <ul class="hidden md:flex items-center gap-6 font-medium">
           <li><a href="#inicio" class="hover:text-blue-700">Início</a></li>
           <li><a href="#vantagens" class="hover:text-blue-700">Vantagens</a></li>
@@ -83,15 +79,11 @@
           <li><a href="#seguranca" class="hover:text-blue-700">Segurança</a></li>
           <li><a href="#contato" class="hover:text-blue-700">Contato</a></li>
         </ul>
-
-        <!-- Botão mobile -->
         <button id="menuBtn" class="md:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Abrir menu">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
       </div>
     </div>
-
-    <!-- Menu mobile -->
     <div id="mobileMenu" class="md:hidden hidden border-t border-gray-100">
       <ul class="px-4 py-3 space-y-2 font-medium">
         <li><a href="#inicio" class="block px-3 py-2 rounded-lg hover:bg-gray-100">Início</a></li>
@@ -105,8 +97,7 @@
   </nav>
 
   <!-- Hero -->
-  <!-- Hero -->
-  <header id="inicio" class="hero-bg relative pt-40 pb-16 md:pb-24 px-6">
+  <header id="inicio" class="hero-bg relative pt-40 pb-16 md:pb-24 px-6 mt-[104px]">
     <div class="absolute inset-0 bg-gradient-to-b from-blue-900/70 to-black/40 z-0 rounded-b-2xl"></div>
     <div class="relative z-10 max-w-4xl mx-auto text-center text-white" data-aos="fade-up">
       <h1 class="text-4xl md:text-6xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-green-300">
@@ -124,8 +115,6 @@
 
   <!-- Conteúdo principal -->
   <main class="max-w-6xl mx-auto px-6 py-10 md:py-14 space-y-10 md:space-y-16">
-
-    <!-- Vantagens -->
     <section id="vantagens" class="text-center" data-aos="fade-up">
       <h2 class="text-3xl md:text-4xl font-extrabold text-blue-900 mb-8">Vantagens Exclusivas para Você</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-lg text-gray-700">
@@ -147,12 +136,10 @@
       </div>
     </section>
 
-    <!-- Imagem antes do download -->
     <div class="card p-4" data-aos="fade-up">
       <img src="https://i.imgur.com/jw3ObZf.png" alt="Processo de instalação segura via atendente" class="rounded-2xl mx-auto w-full">
     </div>
 
-    <!-- Download -->
     <section id="download" class="text-center space-y-6 md:space-y-8" data-aos="fade-up">
       <h2 class="text-3xl font-extrabold text-blue-900">Baixe o Aplicativo Oficial</h2>
       <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">Clique no botão abaixo para iniciar o download. O atendente irá guiá-lo em todas as etapas de instalação.</p>
@@ -167,7 +154,6 @@
       </div>
     </section>
 
-    <!-- Instalação + Segurança -->
     <div class="grid md:grid-cols-2 gap-8 md:gap-12 mt-12">
       <section id="instalacao" class="card p-8 md:p-10 space-y-6" data-aos="fade-right">
         <h2 class="text-2xl font-bold text-blue-800 text-center">Passo a Passo da Instalação</h2>
@@ -190,7 +176,6 @@
     </div>
   </main>
 
-  <!-- Rodapé -->
   <footer class="bg-blue-900 text-white text-center py-8">
     <p class="text-sm">© 2025 — Portal de Benefícios. Página demonstrativa.</p>
   </footer>
@@ -213,4 +198,3 @@
   </script>
 </body>
 </html>
-
