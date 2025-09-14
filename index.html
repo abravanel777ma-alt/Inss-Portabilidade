@@ -20,15 +20,23 @@
 
   <style>
     :root { scroll-behavior: smooth; }
-    body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg,#eef2f8 0%,#f7fafc 100%); }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg,#eef2f8 0%,#f7fafc 100%);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* remove scroll lateral */
+    }
 
     .hero-bg {
       position: relative;
-      background: url('https://i.imgur.com/MTMxQes.png') center/contain no-repeat,
+      background: url('https://i.imgur.com/MTMxQes.png') center/cover no-repeat,
                   linear-gradient(135deg,#eef2f8 0%,#f7fafc 100%);
       min-height: 90vh;
       border-bottom-left-radius: 1.5rem;
       border-bottom-right-radius: 1.5rem;
+      width: 100%;
+      overflow-x: hidden;
     }
 
     .hero-bg::after {
@@ -86,7 +94,7 @@
   </nav>
 
   <!-- Hero -->
-  <header id="inicio" class="hero-bg relative pt-40 pb-16 md:pb-24 px-6">
+  <header id="inicio" class="hero-bg relative pt-40 pb-16 md:pb-24 px-6 mt-[64px]">
     <div class="absolute inset-0 bg-gradient-to-b from-blue-900/70 to-black/40 z-0 rounded-b-2xl"></div>
     <div class="relative z-10 max-w-4xl mx-auto text-center text-white" data-aos="fade-up">
       <h1 class="text-4xl md:text-6xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-green-300">
