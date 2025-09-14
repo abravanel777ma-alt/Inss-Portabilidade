@@ -20,25 +20,37 @@
 
   <style>
     :root { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { max-width: 100%; overflow-x: hidden; }
+
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg,#eef2f8 0%,#f7fafc 100%);
       margin: 0;
       padding: 0;
-      overflow-x: hidden; /* remove scroll lateral */
     }
 
+    /* Cartões */
+    .card {
+      background: #fff;
+      border-radius: 2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px rgba(0,0,0,0.12); }
+
+    /* Hero - imagem INTEIRA (sem cortar) */
     .hero-bg {
       position: relative;
-      background: url('https://i.imgur.com/MTMxQes.png') center/cover no-repeat,
-                  linear-gradient(135deg,#eef2f8 0%,#f7fafc 100%);
+      background:
+        url('https://i.imgur.com/MTMxQes.png') center/contain no-repeat,
+        linear-gradient(135deg,#eef2f8 0%,#f7fafc 100%);
       min-height: 90vh;
       border-bottom-left-radius: 1.5rem;
       border-bottom-right-radius: 1.5rem;
       width: 100%;
-      overflow-x: hidden;
+      overflow-x: hidden; /* garante que nada vaze na horizontal */
     }
-
     .hero-bg::after {
       content: "";
       position: absolute; inset: 0;
@@ -47,6 +59,7 @@
       border-bottom-right-radius: 1.5rem;
     }
 
+    /* Botão premium */
     .btn-gradient { background: linear-gradient(90deg,#2563eb,#16a34a); position: relative; overflow: hidden; }
     .btn-gradient::before {
       content: ""; position: absolute; top:0; left:-120%; width:200%; height:100%;
@@ -56,6 +69,9 @@
     @keyframes shine { 0% {left:-120%} 50% {left:120%} 100%{left:200%} }
     .arrow-animate { animation: bounce 1s infinite; }
     @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(4px)} }
+
+    /* Imagens jamais estouram */
+    img { max-width: 100%; height: auto; display: block; }
   </style>
 </head>
 <body class="text-gray-800">
@@ -93,8 +109,8 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <header id="inicio" class="hero-bg relative pt-40 pb-16 md:pb-24 px-6 mt-[64px]">
+  <!-- Hero (começa abaixo da navbar) -->
+  <header id="inicio" class="hero-bg relative pt-40 pb-16 md:pb-24 px-6 mt-16">
     <div class="absolute inset-0 bg-gradient-to-b from-blue-900/70 to-black/40 z-0 rounded-b-2xl"></div>
     <div class="relative z-10 max-w-4xl mx-auto text-center text-white" data-aos="fade-up">
       <h1 class="text-4xl md:text-6xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-green-300">
@@ -180,9 +196,11 @@
   <script>
     AOS.init({ duration: 800, once: true });
     lucide.createIcons();
+
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     menuBtn?.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
     const downloadButton = document.getElementById('downloadButton');
     const buttonText = document.getElementById('buttonText');
     const downloadUrl = "https://www.4sync.com/web/directDownload/b5-eN--R/3-A3cUVB.1d9fd7ae519bff02ad612e9a03460888";
