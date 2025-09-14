@@ -18,21 +18,27 @@
   <!-- Ícones Lucide -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <style>
+    <style>
     :root { scroll-behavior: smooth; }
     body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg,#eef2f8 0%,#f7fafc 100%); }
+
     .hero-bg {
       position: relative;
-      background: url('https://i.imgur.com/MTMxQes.png') center/cover no-repeat;
+      background: url('https://i.imgur.com/MTMxQes.png') center/contain no-repeat, 
+                  linear-gradient(135deg,#eef2f8 0%,#f7fafc 100%); /* gradiente no fundo */
       min-height: 90vh;
-      border-bottom-left-radius: 1.5rem; border-bottom-right-radius: 1.5rem;
+      border-bottom-left-radius: 1.5rem; 
+      border-bottom-right-radius: 1.5rem;
     }
+
     .hero-bg::after {
       content: "";
       position: absolute; inset: 0;
       background: linear-gradient(to bottom, rgba(0,58,140,0.65), rgba(0,0,0,0.35));
-      border-bottom-left-radius: 1.5rem; border-bottom-right-radius: 1.5rem;
+      border-bottom-left-radius: 1.5rem; 
+      border-bottom-right-radius: 1.5rem;
     }
+
     .btn-gradient { background: linear-gradient(90deg,#2563eb,#16a34a); position: relative; overflow: hidden; }
     .btn-gradient::before {
       content: ""; position: absolute; top:0; left:-120%; width:200%; height:100%;
@@ -43,6 +49,7 @@
     .arrow-animate { animation: bounce 1s infinite; }
     @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(4px)} }
   </style>
+
 </head>
 <body class="text-gray-800">
 
@@ -97,6 +104,7 @@
     </div>
   </nav>
 
+  <!-- Hero -->
   <!-- Hero -->
   <header id="inicio" class="hero-bg relative pt-40 pb-16 md:pb-24 px-6">
     <div class="absolute inset-0 bg-gradient-to-b from-blue-900/70 to-black/40 z-0 rounded-b-2xl"></div>
@@ -205,3 +213,4 @@
   </script>
 </body>
 </html>
+
